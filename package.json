@@ -1,0 +1,13 @@
+{
+  "name": "Doctools - Sistema de automação de documentos",
+  "author": "Ayrton Yamashita",
+  "version": "1.0.1",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3"
+  }
+}
