@@ -60,8 +60,8 @@ function createPanel(docs) {
   panel.appendChild(table);
   document.body.appendChild(panel)
 }
+export async function startAutomate(dactes, time) {
 
-async function startAutomate(dactes, time) {
   createPanel(dactes)
 
   const localErrors = localStorage.getItem("log");
@@ -113,7 +113,7 @@ async function startAutomate(dactes, time) {
 
       localStorage.setItem("data", JSON.stringify(data))
       alert("Automação")
-      // await generatePDF(localErrors, data)
+      await generatePDF(localErrors, data)
 
       const token = encodeURIComponent(JSON.stringify(payload))
 
@@ -123,12 +123,11 @@ async function startAutomate(dactes, time) {
       link.textContent = "Caso não tenha gerado o relatório automaticamente, clique aqui."
 
       document.getElementById("header-id").appendChild(link)
-      
+
 
     }
   }
 }
-
 async function generatePDF(errorsLog, data) {
 
   const log = Array.isArray(errorsLog) ? errorsLog : JSON.parse(errorsLog || "[]");
