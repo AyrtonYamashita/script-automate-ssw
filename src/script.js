@@ -112,7 +112,7 @@ export async function startAutomate(dactes, time) {
       const payload = { data, logsRaw }
 
       localStorage.setItem("data", JSON.stringify(data))
-      alert("Automação")
+      alert("Automação encerrada. Clique em OK para realizar a impressão do relatório.")
       await generatePDF(localErrors, data)
 
       const token = encodeURIComponent(JSON.stringify(payload))
