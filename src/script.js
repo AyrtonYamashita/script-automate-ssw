@@ -322,4 +322,3 @@ async function generatePDF(errorsLog, data) {
     printWindow.print();
   }
 }
-startAutomate(documentos, time)
