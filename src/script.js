@@ -60,7 +60,7 @@ function createPanel(docs) {
   panel.appendChild(table);
   document.body.appendChild(panel)
 }
-export async function startAutomate(dactes, time) {
+export async function startAutomate(dactes, time, prod) {
 
   createPanel(dactes)
 
@@ -118,7 +118,7 @@ export async function startAutomate(dactes, time) {
       const token = encodeURIComponent(JSON.stringify(payload))
 
       const link = document.createElement("a")
-      link.href = `http://localhost:5173/barcode/decode-report/${token}`
+      link.href = `${prod ? "https://doctools-io.vercel.app/" : "http://localhost:5173/"}/barcode/decode-report/${token}`
       link.target = "_blank"
       link.textContent = "Caso não tenha gerado o relatório automaticamente, clique aqui."
 
